@@ -2,4 +2,4 @@ RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)$ php.localhost/index.php [QSA,L]
+RewriteRule ^(.+)$ aminalmazaya-theme/index.php [QSA,L]

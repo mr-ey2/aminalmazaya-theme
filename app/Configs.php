@@ -2,7 +2,7 @@
 
 //Configs:
 
-define('CURRENT_DOMAIN', currentDomain() . '/php.localhost/');
+define('CURRENT_DOMAIN', currentDomain() . '/aminalmazaya-theme/');
 define('DISPLAY_ERROR', true);
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'project');

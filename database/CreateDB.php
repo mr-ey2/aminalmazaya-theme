@@ -1,18 +1,20 @@
 <?php
 
 namespace database;
-class CreateDB{
-private $createTableQueries =
-    [
-        "CREATE TABLE `categories` (
+
+class CreateDB extends DataBase
+{
+  private $createTableQueries =
+  [
+    "CREATE TABLE `categories` (
                         `id` int(11) NOT NULL AUTO_INCREMENT ,
                         `name` varchar(200) COLLATE utf8mb4_unicode_ci	 NOT NULL,
                         `created_at` datetime NOT NULL,
                         `updated_at` datetime DEFAULT NULL,
                         PRIMARY KEY (`id`)
-                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_unicode_ci	;",
+                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci	;",
 
-        "CREATE TABLE `users` (
+    "CREATE TABLE `users` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `username` varchar(100) COLLATE utf8mb4_unicode_ci	 NOT NULL,
                         `email` varchar(100) COLLATE utf8mb4_unicode_ci	 NOT NULL,
@@ -22,9 +24,9 @@ private $createTableQueries =
                         `updated_at` datetime DEFAULT NULL,
                         PRIMARY KEY (`id`),
                         UNIQUE KEY (`email`)
-                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_unicode_ci	;",
+                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci	;",
 
-        "CREATE TABLE `articles` (
+    "CREATE TABLE `articles` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `title` varchar(200) COLLATE utf8mb4_unicode_ci	 NOT NULL,
                         `summary` text COLLATE utf8mb4_unicode_ci	 NOT NULL,
@@ -39,9 +41,9 @@ private $createTableQueries =
                         PRIMARY KEY (`id`),
                         FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
                         FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_unicode_ci	;",
+                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci	;",
 
-        "CREATE TABLE `comments` (
+    "CREATE TABLE `comments` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `user_id` int(11) NOT NULL,
                         `comment` text COLLATE utf8mb4_unicode_ci	 NOT NULL,
@@ -52,9 +54,9 @@ private $createTableQueries =
                         PRIMARY KEY (`id`),
                         FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
                         FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_unicode_ci	;",
+                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci	;",
 
-        "CREATE TABLE `websetting` (
+    "CREATE TABLE `websetting` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `title` text COLLATE utf8mb4_unicode_ci	 DEFAULT NULL,
                         `description` text COLLATE utf8mb4_unicode_ci	 DEFAULT NULL,
@@ -64,10 +66,10 @@ private $createTableQueries =
                         `created_at` datetime NOT NULL,
                         `updated_at` datetime DEFAULT NULL,
                         PRIMARY KEY (`id`)
-                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_unicode_ci	;
+                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci	;
                       ",
 
-        "CREATE TABLE `menus` (
+    "CREATE TABLE `menus` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `name` varchar(100) COLLATE utf8mb4_unicode_ci	 NOT NULL,
                         `url` varchar(300) COLLATE utf8mb4_unicode_ci	 NOT NULL,
@@ -76,34 +78,31 @@ private $createTableQueries =
                         `updated_at` datetime DEFAULT NULL,
                         PRIMARY KEY (`id`),
                         FOREIGN KEY (`parent_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_unicode_ci	;
+                      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci	;
                       ",
-    ];
+  ];
 
-    private $tableInitializes = [
-        ['table' => 'users', 'fields' => [
-            'username',
-            'email',
-            'password',
-            'permission'
-        ], 'values' => [
-            'amina2',
-            'amin@gmail.com',
-            '123456',
-            'admin'
-        ]]
-    ];
+  private $tableInitializes = [
+    ['table' => 'users', 'fields' => [
+      'username',
+      'email',
+      'password',
+      'permission'
+    ], 'values' => [
+      'amina2',
+      'amin@gmail.com',
+      '123456',
+      'admin'
+    ]]
+  ];
 
-    // public function run()
-    // {
-    //     foreach ($this->createTableQueries as $createTableQuery) {
-    //         $this->createTable($createTableQuery);
-    //     }
-    //     foreach ($this->tableInitializes as $tableInitialize) {
-    //         $this->insert($tableInitialize['table'], $tableInitialize['fields'], $tableInitialize['values']);
-    //     }
-    // }
-
-
+  public function run()
+  {
+    foreach ($this->createTableQueries as $createTableQuery) {
+      $this->createTable($createTableQuery);
+    }
+    foreach ($this->tableInitializes as $tableInitialize) {
+      $this->insert($tableInitialize['table'], $tableInitialize['fields'], $tableInitialize['values']);
+    }
+  }
 }
-

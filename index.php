@@ -16,3 +16,13 @@ displayError(DISPLAY_ERROR);
 
 //Database Connection:
 require_once BASE_PATH . '/database/DataBase.php';
+require_once BASE_PATH . '/database/CreateDB.php';
+
+//Create Database and Tables:
+// $db = new database\CreateDB();
+// $db->run();
+
+//Routes:
+require_once BASE_PATH . '/activities/Admin/Category.php';
+require_once BASE_PATH . '/app/Routes.php';
+echo "404 Not Found!";
