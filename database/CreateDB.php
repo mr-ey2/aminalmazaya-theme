@@ -26,7 +26,7 @@ class CreateDB extends DataBase
                         UNIQUE KEY (`email`)
                       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci	;",
 
-    "CREATE TABLE `articles` (
+    "CREATE TABLE `posts` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `title` varchar(200) COLLATE utf8mb4_unicode_ci	 NOT NULL,
                         `summary` text COLLATE utf8mb4_unicode_ci	 NOT NULL,
@@ -47,12 +47,12 @@ class CreateDB extends DataBase
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `user_id` int(11) NOT NULL,
                         `comment` text COLLATE utf8mb4_unicode_ci	 NOT NULL,
-                        `article_id` int(11)  NOT NULL,
+                        `post_id` int(11)  NOT NULL,
                         `status` enum('unseen','seen','approved') COLLATE utf8mb4_unicode_ci	 NOT NULL DEFAULT 'unseen',
                         `created_at` datetime NOT NULL,
                         `updated_at` datetime DEFAULT NULL,
                         PRIMARY KEY (`id`),
-                        FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+                        FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
                         FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
                       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci	;",
 

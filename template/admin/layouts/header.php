@@ -42,7 +42,7 @@
             <nav class="col-md-2 d-none d-md-block pt-3 bg-sidebar sidebar px-0">
                 <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href=""><i class="fas fa-home me-2"></i><span>Home</span></a>
                 <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href="<?= url('admin/category') ?>"><i class="fas fa-clipboard-list me-2"></i><span> Category</span></a>
-                <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href=""><i class="fas fa-newspaper me-2"></i><span>Post</span></a>
+                <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href="<?= url('admin/post') ?>"><i class="fas fa-newspaper me-2"></i><span>Post</span></a>
                 <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href=""><i class="fas fa-image me-2"></i><span>Banner</span></a>
                 <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href=""><i class="fas fa-comments me-2"></i><span>Comment</span></a>
                 <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href=""><i class="fas fa-bars me-2"></i><span>Menus</span></a>

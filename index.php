@@ -26,5 +26,5 @@ require_once BASE_PATH . '/database/CreateDB.php';
 //Routes:
 require_once BASE_PATH . '/activities/Admin/Admin.php';
 require_once BASE_PATH . '/activities/Admin/Category.php';
+require_once BASE_PATH . '/activities/Admin/Post.php';
 require_once BASE_PATH . '/app/Routes.php';
-echo "404 Not Found!";
