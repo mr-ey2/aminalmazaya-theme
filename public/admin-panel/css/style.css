@@ -32,16 +32,31 @@
 .bg-sidebar>a>i{
     color: rgb(0,168,249);
     /*color: rgb(255,255,255);*/
+    min-width: 22px;
+    text-align: center;
+    font-size: 1.1em;
+    margin-left: 0;
+    margin-right: 8px;
 }
-.bg-sidebar a:hover{
+/* تراز و افکت hover برای لینک‌های سایدبار */
+.bg-sidebar>a,
+.bg-sidebar a.d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+    border-left: 3px solid rgba(0,0,0,1);
+    font-size: 15px;
+    color: #fff;
+    transition: all 0.3s;
+    gap: 6px;
+}
+.bg-sidebar>a:hover,
+.bg-sidebar a.d-flex.align-items-center:hover {
     border-left: 3px solid rgb(0, 89, 249);
     color: #ffffff;
     text-shadow:
-            0 0 2px rgb(255,255,255),
-            0 0 5px rgb(150,205,253),
-            0 0 10px rgb(0,168,249);
-    transition: all 0.3s;
-    transition: all 0.3s;
+        0 0 2px rgb(255,255,255),
+        0 0 5px rgb(150,205,253),
+        0 0 10px rgb(0,168,249);
 }
 .bg-sidebar>a:hover>i{
     color: rgb(255,255,255);

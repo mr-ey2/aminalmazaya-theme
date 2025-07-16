@@ -72,6 +72,7 @@ function dd($var)
 
 function uri($reservedUrl, $class, $method, $requestMethod = 'GET')
 {
+
     //Current Url Array:
     $currentUrl = explode('?', currentUrl())[0];
     $currentUrl = str_replace(CURRENT_DOMAIN, '', $currentUrl);
@@ -93,7 +94,7 @@ function uri($reservedUrl, $class, $method, $requestMethod = 'GET')
     $parameters = [];
     for ($key = 0; $key < sizeof($currentUrlArray); $key++) {
         if ($reservedUrlArray[$key][0] == '{' && $reservedUrlArray[$key][strlen($reservedUrlArray[$key]) - 1] == '}') {
-            array_push($parameters, $reservedUrlArray[$key]);
+            array_push($parameters, $currentUrlArray[$key]);
         } elseif ($currentUrlArray[$key] != $reservedUrlArray[$key]) {
             return false;
         }

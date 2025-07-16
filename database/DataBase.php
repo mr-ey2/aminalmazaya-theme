@@ -43,6 +43,7 @@ class DataBase
         }
     }
 
+
     //Insert:
     public function insert($tableName, $fields, $values)
     {
@@ -59,7 +60,8 @@ class DataBase
     //Update;
     public function update($tableName, $id, $fields, $values)
     {
-        $sql = "UPDATE"  . $tableName . "SET";
+
+        $sql = "UPDATE " . $tableName . " SET";
         foreach (array_combine($fields, $values) as $field => $value) {
             if ($value) {
                 $sql .= " `" . $field . "` = ? ,";
@@ -67,6 +69,7 @@ class DataBase
                 $sql .= " `" . $field . "` = NULL ,";
             }
         }
+
         $sql .= " updated_at = now()";
         $sql .= " WHERE id = ?";
         try {
@@ -82,7 +85,7 @@ class DataBase
     //Delete:
     public function delete($tableName, $id)
     {
-        $sql = "DELETE FROM" . $tableName . " WHERE id = ? ;";
+        $sql = "DELETE FROM " . $tableName . " WHERE id = ? ;";
         try {
             $stmt = $this->connection->prepare($sql);
             $stmt->execute([$id]);
@@ -92,6 +95,7 @@ class DataBase
             return false;
         }
     }
+
     public function createTable($sql)
     {
         try {
