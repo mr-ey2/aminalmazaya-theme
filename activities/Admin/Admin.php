@@ -25,10 +25,10 @@ class Admin
 
         if ($imageName)
              {
-            $extension = explode('/', $image['type'][1]);
+            $extension = explode('/', $image['type'])[1];
             $imageName = $imageName . '.' . $extension;
         } else {
-            $extension = explode('/', $image['type'][1]);
+            $extension = explode('/', $image['type'])[1];
             $imageName = date("Y-m-d-H-i-s") . '.' . $extension;
         }
         $imageTemp = $image['tmp_name'];

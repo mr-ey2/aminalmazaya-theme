@@ -7,7 +7,7 @@ require_once(BASE_PATH . '/template/admin/layouts/header.php');
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h5"><i class="fas fa-newspaper"></i> Posts</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
-        <a role="button" href="" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i> Create</a>
+        <a role="button" href="<?= url('admin/post/create') ?>" class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i> Create</a>
     </div>
 </div>
 <div class="table-responsive">
@@ -61,8 +61,8 @@ require_once(BASE_PATH . '/template/admin/layouts/header.php');
                             <?= $post['selected'] == 1 ? 'Remove Selcted' : 'Add Selected' ?>
                         </a>
                         <hr class="my-1" />
-                        <a role="button" class="btn btn-sm btn-primary text-white" href="">edit</a>
-                        <a role="button" class="btn btn-sm btn-danger text-white" href="">delete</a>
+                        <a role="button" class="btn btn-sm btn-primary text-white" href=""><i class="fa-solid fa-pen"></i> Edit</a>
+                        <a role="button" class="btn btn-sm btn-danger text-white" href=""><i class="fa-solid fa-trash"></i> Delete</a>
                     </td>
                 </tr>
             <?php } ?>
