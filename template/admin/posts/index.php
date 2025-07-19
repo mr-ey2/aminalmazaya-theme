@@ -27,8 +27,7 @@ require_once(BASE_PATH . '/template/admin/layouts/header.php');
             </tr>
         </thead>
         <tbody>
-            <?php
-            foreach ($posts as $post) { ?>
+            <?php foreach ($posts as $post) { ?>
                 <tr>
                     <td>
                         <?= $post['id'] ?>

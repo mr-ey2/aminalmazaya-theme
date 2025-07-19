@@ -36,6 +36,15 @@ uri('admin/banner/update/{id}', 'Admin\Banner', 'update', 'POST');
 uri('admin/banner/delete/{id}', 'Admin\Banner', 'delete');
 
 
+//Users:
+
+uri('admin/user', 'Admin\User', 'index');
+uri('admin/user/edit/{id}', 'Admin\User', 'edit');
+uri('admin/user/update/{id}', 'Admin\User', 'update', 'POST');
+uri('admin/user/delete/{id}', 'Admin\User', 'delete');
+uri('admin/user/permission/{id}', 'Admin\User', 'permission');
+
+
 
 
 echo "404 Not Found!";

@@ -12,7 +12,7 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.1.0/mdb.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.1.0/mdb.min.css" rel="stylesheet" type="text/css">
     <link href="<?= asset('public/jalalidatepicker/persian-datepicker.min.css') ?>" rel="stylesheet" type="text/css">
 
     <link href="<?= asset('public/admin-panel/css/style.css') ?>" rel="stylesheet" type="text/css">
@@ -47,7 +47,7 @@
                 <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href="<?= url('admin/banner') ?>"><i class="fas fa-image me-2"></i><span>Banner</span></a>
                 <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href=""><i class="fas fa-comments me-2"></i><span>Comment</span></a>
                 <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href=""><i class="fas fa-bars me-2"></i><span>Menus</span></a>
-                <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href=""><i class="fas fa-users me-2"></i><span>User</span></a>
+                <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href="<?= url('admin/user') ?>"><i class="fas fa-users me-2"></i><span>User</span></a>
                 <a class="text-decoration-none d-flex align-items-center py-1 px-2 mt-1" href=""><i class="fas fa-tools me-2"></i><span>Web Setting</span></a>
             </nav>
 

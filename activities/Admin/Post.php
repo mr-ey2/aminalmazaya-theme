@@ -6,10 +6,12 @@ use database\DataBase;
 
 class Post extends Admin
 {
-    private function getPostsWithJoins()
+
+
+    public function index()
     {
         $db = new DataBase();
-        $sql = "SELECT
+        $posts = $db->select('SELECT
         posts.* ,
         users.username AS user_name ,
         categories.name AS category_name
@@ -19,17 +21,7 @@ class Post extends Admin
         users ON posts.user_id = users.id
         LEFT JOIN
         categories ON posts.cat_id = categories.id 
-        ORDER BY id ASC";
-        $posts = $db->select($sql);
-        return $posts ? $posts->fetchAll() : [];
-    }
-
-
-
-
-    public function index()
-    {
-        $posts = $this->getPostsWithJoins();
+        ORDER BY id ASC');
         require_once(BASE_PATH . '/template/admin/posts/index.php');
     }
 

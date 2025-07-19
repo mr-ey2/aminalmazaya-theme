@@ -25,4 +25,5 @@ require_once BASE_PATH . '/activities/Admin/Admin.php';
 require_once BASE_PATH . '/activities/Admin/Category.php';
 require_once BASE_PATH . '/activities/Admin/Post.php';
 require_once BASE_PATH . '/activities/Admin/Banner.php';
+require_once BASE_PATH . '/activities/Admin/User.php';
 require_once BASE_PATH . '/app/Routes.php';
