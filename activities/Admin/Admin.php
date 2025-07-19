@@ -4,12 +4,14 @@ namespace Admin;
 
 class Admin
 {
+    protected $currentDomain;
+    protected $basePath;
 
-    // function __construct()
-    // {
-    //     $this->currentDomain = CURRENT_DOMAIN;
-    //     $this->basePath = BASE_PATH;
-    // }
+    function __construct()
+    {
+        $this->currentDomain = CURRENT_DOMAIN;
+        $this->basePath = BASE_PATH;
+    }
     protected function redirect($url)
     {
         header('Location: ' . trim(CURRENT_DOMAIN, '/ ') . '/' . trim($url, '/ '));
@@ -23,8 +25,7 @@ class Admin
     protected function saveImage($image, $imagePath, $imageName = null)
     {
 
-        if ($imageName)
-             {
+        if ($imageName) {
             $extension = explode('/', $image['type'])[1];
             $imageName = $imageName . '.' . $extension;
         } else {
@@ -45,7 +46,7 @@ class Admin
     }
     protected function removeImage($path)
     {
-        $path = trim(BASE_PATH, '/ ') . '/' . trim($path, '/ ');
+        $path =trim($path, '/ ');
         if (file_exists($path)) {
             unlink($path);
         }

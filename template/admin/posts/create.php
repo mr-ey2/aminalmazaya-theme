@@ -38,7 +38,7 @@ require_once BASE_PATH . '/template/admin/layouts/header.php';
 
             <div class="form-group">
                 <label for="published_at">Published At</label>
-                <input type="text" class="form-control" id="published_at" name="published_at" autofocus>
+                <input type="hidden" class="form-control" id="published_at" name="published_at" autofocus>
                 <input type="text" class="form-control" id="published_at_view" required autofocus>
             </div>
 

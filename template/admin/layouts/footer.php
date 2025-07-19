@@ -19,7 +19,7 @@
 
             format: 'YYYY-MM-DD HH:mm:ss',
             toolbox: {
-                calenderSwitch: {
+                calendarSwitch: {
                     enabled: true
                 }
             },

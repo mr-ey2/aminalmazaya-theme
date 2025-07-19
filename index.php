@@ -6,11 +6,8 @@ session_start();
 //Defines:
 define('BASE_PATH', __DIR__);
 
-//Helpers:
-require_once BASE_PATH . '/app/Helpers.php';
-
-//Configs:
-require_once BASE_PATH . '/app/Configs.php';
+//Configs & Helpers:
+require_once BASE_PATH . '/app/Configs-Helpers.php';
 
 //Display Errors:
 displayError(DISPLAY_ERROR);
@@ -27,4 +24,5 @@ require_once BASE_PATH . '/database/CreateDB.php';
 require_once BASE_PATH . '/activities/Admin/Admin.php';
 require_once BASE_PATH . '/activities/Admin/Category.php';
 require_once BASE_PATH . '/activities/Admin/Post.php';
+require_once BASE_PATH . '/activities/Admin/Banner.php';
 require_once BASE_PATH . '/app/Routes.php';

@@ -52,17 +52,17 @@ require_once(BASE_PATH . '/template/admin/layouts/header.php');
                     <td>
                         <?= htmlspecialchars($post['category_name'] ?? 'Not Found!') ?>
                     </td>
-                    <td><img style="width: 80px;" src="" alt=""></td>
+                    <td><img style="width: 80px;" src="<?= asset($post['image']) ?>" alt=""></td>
                     <td style="width: 25rem;">
-                        <a role="button" class="btn btn-sm btn-warning btn-dark text-white" href="">
+                        <a role="button" class="btn btn-sm btn-warning btn-dark text-white" href="<?= url('admin/post/breaking-news/' . $post['id']) ?>">
                             <?= $post['breaking_news'] == 1 ? 'Remove Breaking News' : 'Add Breaking News' ?>
                         </a>
-                        <a role="button" class="btn btn-sm btn-warning btn-dark text-white" href="">
+                        <a role="button" class="btn btn-sm btn-warning btn-dark text-white" href="<?= url('admin/post/selected/' . $post['id']) ?>">
                             <?= $post['selected'] == 1 ? 'Remove Selcted' : 'Add Selected' ?>
                         </a>
                         <hr class="my-1" />
-                        <a role="button" class="btn btn-sm btn-primary text-white" href=""><i class="fa-solid fa-pen"></i> Edit</a>
-                        <a role="button" class="btn btn-sm btn-danger text-white" href=""><i class="fa-solid fa-trash"></i> Delete</a>
+                        <a role="button" class="btn btn-sm btn-primary text-white" href="<?= url('admin/post/edit/' . $post['id']) ?>"><i class="fa-solid fa-pen"></i> Edit</a>
+                        <a role="button" class="btn btn-sm btn-danger text-white" href="<?= url('admin/post/delete/' . $post['id']) ?>"><i class="fa-solid fa-trash"></i> Delete</a>
                     </td>
                 </tr>
             <?php } ?>
